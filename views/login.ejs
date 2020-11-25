@@ -15,21 +15,42 @@
 
 <body class="text-center">
 
+  <div class="container">
+    <div class="form-signin">
+      <img class="mb-4" src="/images/logo.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <br>
+      </div>
+      <button id="login" class="btn btn-lg btn-primary btn-block">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+    </div>
+  </div>
 
-    <form class="form-signin">
-        <a href="/"><img class="mb-4" src="/images/logo.png" alt="" width="72" height="72"></a>
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox mb-3">
-         <br>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <a href="/connect">Profile</a>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
-      </form>
+  <script>
+    console.warn(" --> Redefinir los valores que sean necesarios de la variable: def");
+    var def = {
+      secret: '1PsFfVLQ2fivGThSXhPoqw==',
+      providerId: 1,
+      cliendId: 1,
+      apiUser: {
+        user_id: 1,
+        client_id: 1
+      }
+    };
+    console.log(def);
+
+    const btnLogin = document.getElementById('login');
+    btnLogin.addEventListener('click', function() {
+      window.location.replace(`/connect/${def.providerId}/${def.cliendId}/${def.apiUser.user_id}/${def.apiUser.client_id}/${def.secret}`)
+    })
+
+  </script>
+
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

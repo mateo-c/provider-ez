@@ -1,20 +1,24 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors');
+const axios = require('axios');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+var app = express();
 
+
+var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var profileRouter = require('./routes/profile');
 var connectRouter = require('./routes/connect');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());

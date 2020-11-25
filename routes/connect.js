@@ -4,12 +4,11 @@ var router = express.Router();
 
 
 /* GET connect . */
-router.get('/:prov/:cli/:apiUid/:apiUcli/:tk', function(req, res, next) {
+router.get('/:prov/:apiUid/:apiUcli/:tk', function(req, res, next) {
 
   const obj = {
       secret: req.params.tk,
       providerId: req.params.prov,
-      cliendId: req.params.cli,
       apiUser: {
         user_id: req.params.apiUid,
         client_id: req.params.apiUcli

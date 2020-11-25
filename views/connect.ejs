@@ -31,11 +31,10 @@
 // console.log("Definir los valores del usuario de ser necesario:");
 var def = {
   secret: `<%= def.secret %>`,
-  providerId: `<%= def.providerId %>`,
-  cliendId: `<%= def.cliendId %>`,
+  providerId: Number(`<%= def.providerId %>`),
   apiUser: {
-    user_id: `<%= def.apiUser.user_id %>`,
-    client_id: `<%= def.apiUser.client_id %>`
+    user_id: Number(`<%= def.apiUser.user_id %>`),
+    client_id: Number(`<%= def.apiUser.client_id %>`)
   }
 };
 

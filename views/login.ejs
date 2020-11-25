@@ -34,19 +34,18 @@
   <script>
     console.warn(" --> Redefinir los valores que sean necesarios de la variable: def");
     var def = {
-      secret: '1PsFfVLQ2fivGThSXhPoqw==',
-      providerId: 1,
-      cliendId: 1,
+      secret: 'bo2T37HRR2h2myrT5+dePA==',
+      providerId: 2,
       apiUser: {
-        user_id: 1,
-        client_id: 1
+        user_id: 3,
+        client_id: 2
       }
     };
     console.log(def);
 
     const btnLogin = document.getElementById('login');
     btnLogin.addEventListener('click', function() {
-      window.location.replace(`/connect/${def.providerId}/${def.cliendId}/${def.apiUser.user_id}/${def.apiUser.client_id}/${def.secret}`)
+      window.location.replace(`/connect/${def.providerId}/${def.apiUser.user_id}/${def.apiUser.client_id}/${def.secret}`)
     })
 
   </script>
